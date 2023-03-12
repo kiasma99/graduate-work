@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        transform.position = new Vector3(0, -1, 0);
+        transform.position = new Vector3(0, -3, 0);
     }
 
     // Update is called once per frame
@@ -42,6 +42,7 @@ public class Character : MonoBehaviour
         if (PressStart)
         {
             moveVelocity = new Vector3(0, 0.10f, 0);
+            animator.SetInteger("WalkType", 1);
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
     }

@@ -14,7 +14,7 @@ public class StartButton : MonoBehaviour
     {
         btn = this.transform.GetComponent<Button>();
         if (btn != null) btn.onClick.AddListener(start);
-        Player = GameObject.Find("player-idle-back");
+        Player = GameObject.Find("Player");
         character = Player.GetComponent<Character>();
     }
 
