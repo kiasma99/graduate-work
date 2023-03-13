@@ -20,6 +20,7 @@ public class StartButton : MonoBehaviour
 
     public void start()
     {
-        character.PressStart = true;
+        character.MoveFront = true;
+        character.LeftRight = true;
     }
 }
