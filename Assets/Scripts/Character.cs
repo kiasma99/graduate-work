@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     public bool LeftRight = false;
     public bool BackCrossWalk = false;
     Vector3 moveVelocity = Vector3.zero;
-    float moveSpeed = 4;
+    float moveSpeed = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -58,13 +58,13 @@ public class Character : MonoBehaviour
         {
             animator.SetInteger("WalkType", 2);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            moveVelocity = new Vector3(-0.33f, 0.20f, 0);
+            moveVelocity = new Vector3(-0.34f, 0.20f, 0);
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveFrontRight)
         {
             animator.SetInteger("WalkType", 2);
-            moveVelocity = new Vector3(0.33f, 0.20f, 0);
+            moveVelocity = new Vector3(0.34f, 0.20f, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
@@ -72,14 +72,14 @@ public class Character : MonoBehaviour
         {
             animator.SetInteger("WalkType", 2);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            moveVelocity = new Vector3(-0.33f, -0.20f, 0);
+            moveVelocity = new Vector3(-0.34f, -0.20f, 0);
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveBackRight)
         {
             animator.SetInteger("WalkType", 2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            moveVelocity = new Vector3(0.33f, -0.20f, 0);
+            moveVelocity = new Vector3(0.34f, -0.20f, 0);
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (Finish)
