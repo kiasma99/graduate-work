@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - CrossWalk
+  - DeadEnd
+  - Goal
+  - Front
+  - FrontLeft
+  - FrontRight
   layers:
   - Default
   - TransparentFX

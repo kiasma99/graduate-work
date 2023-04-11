@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 49
+  controlID: 53
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 110
+  controlID: 109
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 111
+  controlID: 110
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,9 +173,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 8eebffff
+      m_SelectedIDs: fa9effff
       m_LastClickedID: 0
-      m_ExpandedIDs: 5cf5ffff7af5ffffeaf5ffff98f6fffff4f6ffff4ef7ffff6ef8ffff2afbffff905f0000a25f0000
+      m_ExpandedIDs: 76a8ffffd0a8ffff22b7ffff5cb8ffff04b9ffffdcb9ffffaecaffff98dcffff14deffff6cdeffffc8deffff00e0ffff16e1ffff6ee1ffffc6e1ffff20e2ffffd0e4ffffeae5ffff98f3ffff0cf5fffff0f5ffffaaf7ffff48f8ffffbef9ffff2afbffffbc61000000620000bc6200004c630000be6500004e660000f668000086690000526b0000966b0000266c0000786e0000d28a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 707
     height: 737
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.35106125, y: -0.28210667, z: 0.5504694}
+    m_Target: {x: 1.3860806, y: 0.33714044, z: 0.0639337}
     speed: 2
-    m_Value: {x: -0.35106125, y: -0.28210667, z: 0.5504694}
+    m_Value: {x: 1.3864697, y: 0.21805833, z: 0.06661887}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -559,9 +559,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.44174
+    m_Target: 6.2356005
     speed: 2
-    m_Value: 6.44174
+    m_Value: 5.967082
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -719,22 +719,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Tile/roads_rivers_mountains/roads and rivers
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Tile/roads_rivers_mountains/roads and rivers
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\user\Documents\GitHub\graduate-work
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0600000
-    m_LastClickedID: 24736
-    m_ExpandedIDs: 00000000a0600000a2600000a4600000a6600000a8600000aa600000ac600000ae600000b0600000b2600000c8600000cc60000000ca9a3b
+    m_SelectedIDs: 4c610000
+    m_LastClickedID: 24908
+    m_ExpandedIDs: 00000000226100002461000026610000286100002a6100002c6100002e6100003061000032610000346100004a6100004e61000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -762,7 +762,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0600000a2600000a4600000a6600000a8600000aa600000ac600000ae600000b0600000b2600000
+    m_ExpandedIDs: 00000000226100002461000026610000286100002a6100002c6100002e610000306100003261000034610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -787,10 +787,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8eebffff
-    m_LastClickedInstanceID: -5234
+    m_SelectedInstanceIDs: fa9effff
+    m_LastClickedInstanceID: -24838
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000052610000726100005e6100006861000066610000646100006261000060610000c2610000ae610000b6600000ac600000fc5f0000b0620000326500000e6000007c830000446000001c64000000000000
+    m_ExpandedInstanceIDs: c623000052610000726100005e6100006861000066610000646100006261000060610000c2610000ae610000b6600000ac600000fc5f0000b0620000326500000e6000007c830000446000001c640000000000009260000086630000886100007c610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 54
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1042,10 +1042,10 @@ MonoBehaviour:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     pluginStates:
     - '{}'
-    scale: 12
+    scale: 10
     fitToScreenEnabled: 0
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
-    friendlyName: Samsung Galaxy S10 5G
+    friendlyName: Samsung Galaxy S10+
     networkReachability: 1
     systemLanguage: 10

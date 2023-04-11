@@ -27,26 +27,6 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            animator.SetInteger("WalkType", 1);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            animator.SetInteger("WalkType", 2);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            animator.SetInteger("WalkType", 2);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            animator.SetInteger("WalkType", 3);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
         if (MoveFront)
         {
             animator.SetInteger("WalkType", 1);
@@ -82,6 +62,13 @@ public class Character : MonoBehaviour
             moveVelocity = new Vector3(0.34f, -0.20f, 0);
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
+        if (MoveBack)
+        {
+            animator.SetInteger("WalkType", 3);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            moveVelocity = new Vector3(0, -0.20f, 0);
+            transform.position += moveVelocity * moveSpeed * Time.deltaTime;
+        }
         if (Finish)
         {
             animator.SetInteger("WalkType", 0);
@@ -92,17 +79,22 @@ public class Character : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Ãæµ¹");
-        if (collision.gameObject.name == "Front")
+        if (collision.gameObject.tag == "Front")
         {
             CommandClear();
             MoveFront = true;
         }
-        if (collision.gameObject.name == "FrontLeft")
+        if (collision.gameObject.tag == "FrontLeft")
         {
             CommandClear();
             MoveFrontLeft = true;
         }
-        else if (collision.gameObject.name == "CrossWalk")
+        if (collision.gameObject.tag == "FrontRight")
+        {
+            CommandClear();
+            MoveFrontRight = true;
+        }
+        else if (collision.gameObject.tag == "CrossWalk")
         {
             CommandClear();
             if (BackCrossWalk)
@@ -129,7 +121,7 @@ public class Character : MonoBehaviour
                 }
             }
         }
-        else if (collision.gameObject.name == "DeadEnd")
+        else if (collision.gameObject.tag == "DeadEnd")
         {
             if (MoveFrontLeft)
             {
@@ -137,14 +129,26 @@ public class Character : MonoBehaviour
                 MoveBackRight = true;
                 BackCrossWalk = true;
             }
-            else
+            else if (MoveFrontRight)
             {
                 CommandClear();
-                MoveBackRight = true;
+                MoveBackLeft = true;
+                BackCrossWalk = true;
+            }
+            else if (MoveBackLeft)
+            {
+                CommandClear();
+                MoveFrontRight = true;
+                BackCrossWalk = true;
+            }
+            else if(MoveBackRight)
+            {
+                CommandClear();
+                MoveFrontLeft = true;
                 BackCrossWalk = true;
             }
         }
-        else if(collision.gameObject.name == "Goal")
+        else if(collision.gameObject.tag == "Goal")
         {
             CommandClear();
             Finish = true;

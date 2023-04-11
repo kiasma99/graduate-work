@@ -9,4 +9,13 @@ public class StageButton : MonoBehaviour
     {
         SceneManager.LoadScene("Stage1");
     }
+    public void Start_Stage2()
+    {
+        SceneManager.LoadScene("Stage2");
+    }
+    public void Start_Stage3()
+    {
+        SceneManager.LoadScene("Stage3");
+    }
+
 }
