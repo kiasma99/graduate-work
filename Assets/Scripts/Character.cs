@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Character : MonoBehaviour
 {
     private Animator animator;
+    private Grid grid;
     public bool MoveFront = false;
     public bool MoveFrontLeft = false;
     public bool MoveFrontRight = false;
@@ -13,60 +15,67 @@ public class Character : MonoBehaviour
     public bool MoveBackRight = false;
     public bool Finish = false;
     // Left∞° true, Right∞° false
-    public bool LeftRight = false;
-    public bool BackCrossWalk = false;
+    public bool CrossWalk_2 = false;
+    // 0 : øﬁ-¡ﬂ-ø¿, 1 : øﬁ-ø¿-¡ﬂ, 2 : ø¿-¡ﬂ-øﬁ, 3 : ø¿-øﬁ-¡ﬂ, 4: ¡ﬂ-øﬁ-ø¿, 5: ¡ﬂ-ø¿-øﬁ
+    public int CrossWalk_3 = 0;
+    public int BackCrossWalk = 0;
     Vector3 moveVelocity = Vector3.zero;
-    float moveSpeed = 3;
+    float moveSpeed = 1;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        grid = transform.parent.GetComponentInParent<Grid>();
+        transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
     }
 
-    // Update is called once per frame
+    // 2_CrossWalk is called once per frame
     void Update()
     {
         if (MoveFront)
         {
             animator.SetInteger("WalkType", 1);
-            moveVelocity = new Vector3(0, 0.20f, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            moveVelocity = grid.CellToWorld(new Vector3Int(1, 0, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveFrontLeft)
         {
             animator.SetInteger("WalkType", 2);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            moveVelocity = new Vector3(-0.34f, 0.20f, 0);
+            moveVelocity = grid.CellToWorld(new Vector3Int(0, -1, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveFrontRight)
         {
             animator.SetInteger("WalkType", 2);
-            moveVelocity = new Vector3(0.34f, 0.20f, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            moveVelocity = grid.CellToWorld(new Vector3Int(0, 1, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveBackLeft)
         {
             animator.SetInteger("WalkType", 2);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            moveVelocity = new Vector3(-0.34f, -0.20f, 0);
+            moveVelocity = grid.CellToWorld(new Vector3Int(-1, -1, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveBackRight)
         {
             animator.SetInteger("WalkType", 2);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            moveVelocity = new Vector3(0.34f, -0.20f, 0);
+            moveVelocity = grid.CellToWorld(new Vector3Int(-1, 1, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (MoveBack)
         {
             animator.SetInteger("WalkType", 3);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            moveVelocity = new Vector3(0, -0.20f, 0);
+            moveVelocity = grid.CellToWorld(new Vector3Int(-1, 0, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
         if (Finish)
@@ -78,7 +87,6 @@ public class Character : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("√Êµπ");
         if (collision.gameObject.tag == "Front")
         {
             CommandClear();
@@ -94,26 +102,155 @@ public class Character : MonoBehaviour
             CommandClear();
             MoveFrontRight = true;
         }
-        else if (collision.gameObject.tag == "CrossWalk")
+        else if (collision.gameObject.tag == "CrossWalk_246")
         {
-            CommandClear();
-            if (BackCrossWalk)
+            if (MoveFront)
             {
-                if (LeftRight)
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontLeft = true;
+                }
+                else
+                {
+                    MoveFrontRight = true;
+                }
+            }
+            else if(MoveBackRight)
+            {
+                CommandClear();
+                if (CrossWalk_2)
                 {
                     MoveFrontRight = true;
                 }
                 else
                 {
-                    MoveFrontLeft = true;
+                    MoveBack = true;
                 }
-                BackCrossWalk = false;
             }
             else
             {
-                if (LeftRight)
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBack = true;
+                }
+                else
                 {
                     MoveFrontLeft = true;
+                }
+            }
+        }
+        else if (collision.gameObject.tag == "CrossWalk_356")
+        {
+            if (MoveFrontRight)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontLeft = true;
+                }
+                else
+                {
+                    MoveBackRight = true;
+                }
+            }
+            else if (MoveBackRight)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBackRight = true;
+                }
+                else
+                {
+                    MoveBackLeft = true;
+                }
+            }
+            else
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBackLeft = true;
+                }
+                else
+                {
+                    MoveFrontLeft = true;
+                }
+            }
+        }
+        else if (collision.gameObject.tag == "CrossWalk_236")
+        {
+            if (MoveFrontLeft)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontLeft = true;
+                }
+                else
+                {
+                    MoveFrontRight = true;
+                }
+            }
+            else if (MoveBackRight)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontRight = true;
+                }
+                else
+                {
+                    MoveBackRight = true;
+                }
+            }
+            else
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBackRight = true;
+                }
+                else
+                {
+                    MoveFrontLeft = true;
+                }
+            }
+        }
+        else if (collision.gameObject.tag == "CrossWalk_235")
+        {
+            if (MoveFrontRight)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontRight = true;
+                }
+                else
+                {
+                    MoveBackRight = true;
+                }
+            }
+            else if (MoveBackLeft)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBackRight = true;
+                }
+                else
+                {
+                    MoveBackLeft = true;
+                }
+            }
+            else
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBackLeft = true;
                 }
                 else
                 {
@@ -121,37 +258,313 @@ public class Character : MonoBehaviour
                 }
             }
         }
+        
         else if (collision.gameObject.tag == "DeadEnd")
         {
             if (MoveFrontLeft)
             {
                 CommandClear();
                 MoveBackRight = true;
-                BackCrossWalk = true;
             }
             else if (MoveFrontRight)
             {
                 CommandClear();
                 MoveBackLeft = true;
-                BackCrossWalk = true;
             }
             else if (MoveBackLeft)
             {
                 CommandClear();
                 MoveFrontRight = true;
-                BackCrossWalk = true;
             }
             else if(MoveBackRight)
             {
                 CommandClear();
                 MoveFrontLeft = true;
-                BackCrossWalk = true;
             }
         }
         else if(collision.gameObject.tag == "Goal")
         {
             CommandClear();
             Finish = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // 0 : øﬁ-¡ﬂ-ø¿, 1 : øﬁ-ø¿-¡ﬂ, 2 : ø¿-¡ﬂ-øﬁ, 3 : ø¿-øﬁ-¡ﬂ, 4: ¡ﬂ-øﬁ-ø¿, 5: ¡ﬂ-ø¿-øﬁ
+        if (collision.gameObject.tag == "CrossWalk_2356")
+        {
+            if (MoveFrontRight)
+            {
+                CommandClear();
+                if (BackCrossWalk == 0)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 1)
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 3)
+                    {
+                        MoveBackRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 1)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 5)
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 4)
+                    {
+                        MoveBackRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 2)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 3)
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    else if (CrossWalk_3 == 1 || CrossWalk_3 == 2)
+                    {
+                        MoveBackRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 4)
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 5)
+                    {
+                        MoveBackRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontRight = true;
+                    }
+                    BackCrossWalk = 0;
+                }
+            }
+            else if (MoveBackLeft)
+            {
+                CommandClear();
+                if (BackCrossWalk == 0)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 1)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 3)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 1)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 5)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 4)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 2)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 3)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 1 || CrossWalk_3 == 2)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 4)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 5)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk = 0;
+                }
+            }
+            else if (MoveFrontLeft)
+            {
+                CommandClear();
+                if (BackCrossWalk == 0)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 1)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 3)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 1)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 5)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 4)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 2)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 3)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else if (CrossWalk_3 == 1 || CrossWalk_3 == 2)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 4)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 5)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else
+                    {
+                        MoveFrontLeft = true;
+                    }
+                    BackCrossWalk = 0;
+                }
+            }
+            else
+            {
+                CommandClear();
+                if (BackCrossWalk == 0)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 1)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 3)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 1)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 5)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 4)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else if (BackCrossWalk == 2)
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 3)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 1 || CrossWalk_3 == 2)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk++;
+                }
+                else
+                {
+                    if (CrossWalk_3 == 0 || CrossWalk_3 == 4)
+                    {
+                        MoveFrontRight = true;
+                    }
+                    else if (CrossWalk_3 == 2 || CrossWalk_3 == 5)
+                    {
+                        MoveBackLeft = true;
+                    }
+                    else
+                    {
+                        MoveBackRight = true;
+                    }
+                    BackCrossWalk = 0;
+                }
+            }
         }
     }
     private void CommandClear()

@@ -4,12 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CrossWalk
   - DeadEnd
   - Goal
   - Front
   - FrontLeft
   - FrontRight
+  - CrossWalk_246
+  - CrossWalk_356
+  - CrossWalk_236
+  - CrossWalk_235
+  - CrossWalk_2356
   layers:
   - Default
   - TransparentFX
