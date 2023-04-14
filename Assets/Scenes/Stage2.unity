@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 24877852}
   - component: {fileID: 24877853}
+  - component: {fileID: 24877854}
   m_Layer: 0
-  m_Name: CrossWalk (3)
+  m_Name: CrossWalk_2_4
   m_TagString: CrossWalk_235
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +171,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.01
+--- !u!114 &24877854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24877851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &172104687
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,8 +329,9 @@ GameObject:
   m_Component:
   - component: {fileID: 274818502}
   - component: {fileID: 274818503}
+  - component: {fileID: 274818504}
   m_Layer: 0
-  m_Name: DeadEnd
+  m_Name: DeadEnd_2_1
   m_TagString: DeadEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +367,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.01
+--- !u!114 &274818504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274818501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411297273
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,8 +390,9 @@ GameObject:
   m_Component:
   - component: {fileID: 411297274}
   - component: {fileID: 411297275}
+  - component: {fileID: 411297276}
   m_Layer: 0
-  m_Name: CrossWalk
+  m_Name: CrossWalk_2_1
   m_TagString: CrossWalk_246
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +428,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.01
+--- !u!114 &411297276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411297273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1239703055
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,8 +897,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1302898777}
   - component: {fileID: 1302898778}
+  - component: {fileID: 1302898779}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: Goal_2
   m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,7 +935,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.01
+--- !u!114 &1302898779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302898776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1345746752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,8 +1194,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1424520970}
   - component: {fileID: 1424520971}
+  - component: {fileID: 1424520972}
   m_Layer: 0
-  m_Name: DeadEnd (1)
+  m_Name: DeadEnd_2_2
   m_TagString: DeadEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1179,7 +1232,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.01
+--- !u!114 &1424520972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424520969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1438524192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,8 +1374,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1440770806}
   - component: {fileID: 1440770807}
+  - component: {fileID: 1440770808}
   m_Layer: 0
-  m_Name: CrossWalk (4)
+  m_Name: CrossWalk_2_5
   m_TagString: CrossWalk_2356
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1346,7 +1412,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.01
+--- !u!114 &1440770808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440770805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1451123677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,8 +1435,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1451123678}
   - component: {fileID: 1451123679}
+  - component: {fileID: 1451123680}
   m_Layer: 0
-  m_Name: FrontRight
+  m_Name: FrontRight_2
   m_TagString: FrontRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1377,7 +1456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1663167631}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1451123679
 CircleCollider2D:
@@ -1394,7 +1473,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.01
+--- !u!114 &1451123680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451123677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1483519357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,8 +1496,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1483519358}
   - component: {fileID: 1483519359}
+  - component: {fileID: 1483519360}
   m_Layer: 0
-  m_Name: CrossWalk (1)
+  m_Name: CrossWalk_2_2
   m_TagString: CrossWalk_356
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,7 +1534,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.01
+--- !u!114 &1483519360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483519357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1594876673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,8 +1557,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1594876674}
   - component: {fileID: 1594876675}
+  - component: {fileID: 1594876676}
   m_Layer: 0
-  m_Name: CrossWalk (2)
+  m_Name: CrossWalk_2_3
   m_TagString: CrossWalk_236
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1490,7 +1595,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.01
+--- !u!114 &1594876676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594876673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71df57d6f5e25d4f9a6d3fac1e93a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1663167629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1660,6 @@ Transform:
   - {fileID: 274818502}
   - {fileID: 1424520970}
   - {fileID: 1302898777}
-  - {fileID: 1702163053}
   - {fileID: 1451123678}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1719,54 +1835,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1702163052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1702163053}
-  - component: {fileID: 1702163054}
-  m_Layer: 0
-  m_Name: Front
-  m_TagString: Front
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1702163053
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702163052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.48, y: -0.05, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1663167631}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1702163054
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702163052}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!1 &1848550707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,7 +1931,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 1
+      m_TileMatrixIndex: 4
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -2016,7 +2084,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data:
       e00: 1
       e01: 0
@@ -2062,6 +2130,24 @@ Tilemap:
       e11: 1
       e12: 0
       e13: 0.06
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 1
+    m_Data:
+      e00: 1.1
+      e01: 0
+      e02: 0
+      e03: -0.03
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0.05
       e20: 0
       e21: 0
       e22: 1
@@ -2341,7 +2427,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.04}
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.01
 --- !u!50 &1949695431
 Rigidbody2D:
   serializedVersion: 4

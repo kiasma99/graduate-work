@@ -9,6 +9,8 @@ public class ColliderPosition : MonoBehaviour
     void Start()
     {
         grid = transform.parent.GetComponentInParent<Grid>();
+
+        // Stage 1
         if (transform.name=="CrossWalk_1")
         {
             transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
@@ -24,6 +26,118 @@ public class ColliderPosition : MonoBehaviour
         else if (transform.name == "Goal_1")
         {
             transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+
+        // Stage 2
+        else if (transform.name == "CrossWalk_2_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_2_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_2_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_2_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_2_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+        else if (transform.name == "DeadEnd_2_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 2, 0));
+        }
+        else if (transform.name == "DeadEnd_2_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, 0, 0));
+        }
+        else if (transform.name == "FrontRight_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "Goal_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
+        }
+
+        //Stage 3
+        else if (transform.name == "CrossWalk_3_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_3_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_3_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_3_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 2, 0));
+        }
+        else if (transform.name == "CrossWalk_3_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_3_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_3_7")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_3_8")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_3_9")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, 1, 0));
+        }
+        else if (transform.name == "DeadEnd_3_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 2, 0));
+        }
+        else if (transform.name == "DeadEnd_3_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 3, 0));
+        }
+        else if (transform.name == "Road_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 2, 0));
+        }
+        else if (transform.name == "Front_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, -1, 0));
+        }
+        else if (transform.name == "FrontRight_3_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
+        }
+        else if (transform.name == "FrontRight_3_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "FrontRight_3_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, 0, 0));
+        }
+        else if (transform.name == "BackRight_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, -1, 0));
+        }
+        else if (transform.name == "Goal_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(2, 1, 0));
         }
     }
 }

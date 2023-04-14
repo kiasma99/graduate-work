@@ -14,6 +14,11 @@ TagManager:
   - CrossWalk_236
   - CrossWalk_235
   - CrossWalk_2356
+  - CrossWalk_256
+  - CrossWalk_135
+  - CrossWalk_145
+  - BackRight
+  - Road_56
   layers:
   - Default
   - TransparentFX
