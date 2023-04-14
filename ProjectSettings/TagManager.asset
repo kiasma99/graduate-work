@@ -19,6 +19,13 @@ TagManager:
   - CrossWalk_145
   - BackRight
   - Road_56
+  - Trap
+  - Tool
+  - CrossWalk_124
+  - Road
+  - Road_12
+  - CrossWalk_146
+  - Road_45
   layers:
   - Default
   - TransparentFX

@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
     private Animator animator;
     private Grid grid;
+    private Scene scene;
     public bool MoveFront = false;
     public bool MoveFrontLeft = false;
     public bool MoveFrontRight = false;
     public bool MoveBack = false;
     public bool MoveBackLeft = false;
     public bool MoveBackRight = false;
-    public bool Finish = false;
+    public bool Clear = false;
+    public bool Fail = false;
+    public int Food;
+    public int[] Foods = new int[] { 3, 6, 9, 5, 10, 0, 0, 0, 0, 0};
+    public int HP;
+    public int[] HPs = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    public int Tool;
     // Left°¡ true, Right°¡ false
     public bool CrossWalk_2 = false;
     // 0 : ¿Þ-Áß-¿À, 1 : ¿Þ-¿À-Áß, 2 : ¿À-Áß-¿Þ, 3 : ¿À-¿Þ-Áß, 4: Áß-¿Þ-¿À, 5: Áß-¿À-¿Þ
@@ -21,7 +29,7 @@ public class Character : MonoBehaviour
     public bool MeetDeadEnd = false;
     public int BackCrossWalk = 0;
     Vector3 moveVelocity = Vector3.zero;
-    float moveSpeed = 1;
+    float moveSpeed = 0.5f;
 
     
 
@@ -32,6 +40,17 @@ public class Character : MonoBehaviour
 
         grid = transform.parent.GetComponentInParent<Grid>();
         transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
+
+        scene = SceneManager.GetActiveScene();
+        bool parse = int.TryParse(scene.name.Substring(scene.name.Length-1, 1), out int stage);
+        stage--;
+        if (stage == -1)
+        {
+            stage = 9;
+        }
+        Food = Foods[stage];
+        HP = HPs[stage];
+        Tool = 0;
     }
 
     // 2_CrossWalk is called once per frame
@@ -79,15 +98,31 @@ public class Character : MonoBehaviour
             moveVelocity = grid.CellToWorld(new Vector3Int(-1, 0, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
-        if (Finish)
+        if (Clear)
         {
-            animator.SetInteger("WalkType", 0);
+            animator.SetBool("Clear", true);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            moveVelocity = Vector3.zero;
+        }
+        if (Fail)
+        {
+            animator.SetBool("Clear", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             moveVelocity = Vector3.zero;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Food--;
+        if (collision.gameObject.name == "FrontRight_3_1" && Food == Foods[2] - 1)
+        {
+            Food++;
+        }
+        if (collision.gameObject.name =="FrontLeft_5" && Food == Foods[4] - 1)
+        {
+            Food++;
+        }
+
         if (collision.gameObject.tag == "Front")
         {
             CommandClear();
@@ -130,6 +165,32 @@ public class Character : MonoBehaviour
             {
                 CommandClear();
                 MoveBackLeft=true;
+            }
+        }
+        else if (collision.gameObject.tag == "Road_12")
+        {
+            if (MoveBack)
+            {
+                CommandClear();
+                MoveFrontRight = true;
+            }
+            else
+            {
+                CommandClear();
+                MoveFront = true;
+            }
+        }
+        else if (collision.gameObject.tag == "Road_45")
+        {
+            if (MoveFront)
+            {
+                CommandClear();
+                MoveBackLeft = true;
+            }
+            else
+            {
+                CommandClear();
+                MoveBack = true;
             }
         }
 
@@ -300,7 +361,7 @@ public class Character : MonoBehaviour
                 }
                 else
                 {
-                    MoveBackRight = true;
+                    MoveFrontRight = true;
                 }
             }
             else if (MoveBackLeft)
@@ -406,7 +467,84 @@ public class Character : MonoBehaviour
                 }
             }
         }
-
+        else if (collision.gameObject.tag == "CrossWalk_124")
+        {
+            if (MoveFront)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFront = true;
+                }
+                else
+                {
+                    MoveFrontRight = true;
+                }
+            }
+            else if (MoveBack)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontRight = true;
+                }
+                else
+                {
+                    MoveBack = true;
+                }
+            }
+            else
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveBack = true;
+                }
+                else
+                {
+                    MoveFront = true;
+                }
+            }
+        }
+        else if (collision.gameObject.tag == "CrossWalk_146")
+        {
+            if (MoveFront)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontLeft = true;
+                }
+                else
+                {
+                    MoveFront = true;
+                }
+            }
+            else if (MoveBack)
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFrontLeft = true;
+                }
+                else
+                {
+                    MoveBack = true;
+                }
+            }
+            else
+            {
+                CommandClear();
+                if (CrossWalk_2)
+                {
+                    MoveFront = true;
+                }
+                else
+                {
+                    MoveBack = true;
+                }
+            }
+        }
         // 0 : ¿Þ-Áß-¿À, 1 : ¿Þ-¿À-Áß, 2 : ¿À-Áß-¿Þ, 3 : ¿À-¿Þ-Áß, 4: Áß-¿Þ-¿À, 5: Áß-¿À-¿Þ
         else if (collision.gameObject.tag == "CrossWalk_2356")
         {
@@ -713,12 +851,59 @@ public class Character : MonoBehaviour
                 CommandClear();
                 MoveFrontLeft = true;
             }
+            else if (MoveFront)
+            {
+                CommandClear();
+                MoveBack = true;
+            }
+            else
+            {
+                CommandClear();
+                MoveFront = true;
+            }
             MeetDeadEnd = true;
         }
-        else if(collision.gameObject.tag == "Goal")
+
+        else if (collision.gameObject.tag == "Goal")
         {
             CommandClear();
-            Finish = true;
+            Clear = true;
+        }
+
+        if (collision.gameObject.tag == "Trap")
+        {
+            Food++;
+            if (Tool > 0)
+            {
+                Tool--;
+            }
+            else
+            {
+                HP--;
+            }
+        }
+
+        if (collision.gameObject.tag == "Tool")
+        {
+            Food++;
+            Tool++;
+        }
+
+        if (Food == 0)
+        {
+            CommandClear();
+            if (!Clear)
+            {
+                Fail = true;
+            }
+        }
+        if (HP == 0)
+        {
+            CommandClear();
+            if (!Clear)
+            {
+                Fail = true;
+            }
         }
     }
  
@@ -730,5 +915,5 @@ public class Character : MonoBehaviour
         MoveBack = false;
         MoveBackLeft = false;
         MoveBackRight = false;
-}
+    }
 }

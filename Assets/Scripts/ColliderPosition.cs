@@ -139,5 +139,97 @@ public class ColliderPosition : MonoBehaviour
         {
             transform.position = grid.CellToWorld(new Vector3Int(2, 1, 0));
         }
+
+        //Stage 4
+        else if (transform.name == "CrossWalk_4_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_4_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "DeadEnd_4_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "DeadEnd_4_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 2, 0));
+        }
+        else if (transform.name == "Trap_4")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(0, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0)))/2;
+        }
+        else if (transform.name == "Tool_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "Goal_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+
+        //Stage 5
+        else if (transform.name == "CrossWalk_5_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_5_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_5_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -2, 0));
+        }
+        else if (transform.name == "CrossWalk_5_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_5_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_5_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 1, 0));
+        }
+        else if (transform.name == "DeadEnd_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "FrontLeft_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
+        }
+        else if (transform.name == "Road_5_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+        else if (transform.name == "Road_5_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, -2, 0));
+        }
+        else if (transform.name == "Road_5_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
+        }
+        else if (transform.name == "Trap_5")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(-2, 1, 0)) + grid.CellToWorld(new Vector3Int(-3, 1, 0))) / 2;
+        }
+        else if (transform.name == "Tool_5_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "Tool_5_2")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(-1, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0))) / 2;
+        }
+        else if (transform.name == "Goal_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-3, 1, 0));
+        }
     }
 }
