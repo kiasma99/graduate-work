@@ -26,6 +26,7 @@ TagManager:
   - Road_12
   - CrossWalk_146
   - Road_45
+  - Monster
   layers:
   - Default
   - TransparentFX

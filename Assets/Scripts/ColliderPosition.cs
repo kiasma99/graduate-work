@@ -69,167 +69,233 @@ public class ColliderPosition : MonoBehaviour
         //Stage 3
         else if (transform.name == "CrossWalk_3_1")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, 1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
         }
         else if (transform.name == "CrossWalk_3_2")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
-        }
-        else if (transform.name == "CrossWalk_3_3")
-        {
             transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
-        }
-        else if (transform.name == "CrossWalk_3_4")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 2, 0));
-        }
-        else if (transform.name == "CrossWalk_3_5")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
-        }
-        else if (transform.name == "CrossWalk_3_6")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
-        }
-        else if (transform.name == "CrossWalk_3_7")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, -1, 0));
-        }
-        else if (transform.name == "CrossWalk_3_8")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
-        }
-        else if (transform.name == "CrossWalk_3_9")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(1, 1, 0));
         }
         else if (transform.name == "DeadEnd_3_1")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, 2, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
         }
         else if (transform.name == "DeadEnd_3_2")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 3, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(0, 2, 0));
         }
-        else if (transform.name == "Road_3")
+        else if (transform.name == "Trap_3")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 2, 0));
+            transform.position = (grid.CellToWorld(new Vector3Int(0, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0)))/2;
         }
-        else if (transform.name == "Front_3")
+        else if (transform.name == "Tool_3")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, -1, 0));
-        }
-        else if (transform.name == "FrontRight_3_1")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
-        }
-        else if (transform.name == "FrontRight_3_2")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
-        }
-        else if (transform.name == "FrontRight_3_3")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(1, 0, 0));
-        }
-        else if (transform.name == "BackRight_3")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(1, -1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
         }
         else if (transform.name == "Goal_3")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(2, 1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
         }
 
         //Stage 4
         else if (transform.name == "CrossWalk_4_1")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-2, -1, 0));
         }
         else if (transform.name == "CrossWalk_4_2")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
         }
-        else if (transform.name == "DeadEnd_4_1")
+        else if (transform.name == "CrossWalk_4_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -2, 0));
+        }
+        else if (transform.name == "CrossWalk_4_4")
         {
             transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
         }
-        else if (transform.name == "DeadEnd_4_2")
+        else if (transform.name == "CrossWalk_4_5")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 2, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_4_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 1, 0));
+        }
+        else if (transform.name == "DeadEnd_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "FrontLeft_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
+        }
+        else if (transform.name == "Road_4_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+        else if (transform.name == "Road_4_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, -2, 0));
+        }
+        else if (transform.name == "Road_4_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
         }
         else if (transform.name == "Trap_4")
         {
-            transform.position = (grid.CellToWorld(new Vector3Int(0, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0)))/2;
+            transform.position = (grid.CellToWorld(new Vector3Int(-2, 1, 0)) + grid.CellToWorld(new Vector3Int(-3, 1, 0))) / 2;
         }
-        else if (transform.name == "Tool_4")
+        else if (transform.name == "Tool_4_1")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "Tool_4_2")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(-1, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0))) / 2;
         }
         else if (transform.name == "Goal_4")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-3, 1, 0));
         }
 
         //Stage 5
         else if (transform.name == "CrossWalk_5_1")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, -1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
         }
         else if (transform.name == "CrossWalk_5_2")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
         }
-        else if (transform.name == "CrossWalk_5_3")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, -2, 0));
-        }
-        else if (transform.name == "CrossWalk_5_4")
+        else if (transform.name == "DeadEnd_5_1")
         {
             transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
         }
-        else if (transform.name == "CrossWalk_5_5")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
-        }
-        else if (transform.name == "CrossWalk_5_6")
+        else if (transform.name == "DeadEnd_5_2")
         {
             transform.position = grid.CellToWorld(new Vector3Int(-2, 1, 0));
         }
-        else if (transform.name == "DeadEnd_5")
+        else if (transform.name == "Monster_5")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
-        }
-        else if (transform.name == "FrontLeft_5")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
-        }
-        else if (transform.name == "Road_5_1")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
-        }
-        else if (transform.name == "Road_5_2")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(-2, -2, 0));
-        }
-        else if (transform.name == "Road_5_3")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
-        }
-        else if (transform.name == "Trap_5")
-        {
-            transform.position = (grid.CellToWorld(new Vector3Int(-2, 1, 0)) + grid.CellToWorld(new Vector3Int(-3, 1, 0))) / 2;
-        }
-        else if (transform.name == "Tool_5_1")
-        {
-            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
-        }
-        else if (transform.name == "Tool_5_2")
-        {
-            transform.position = (grid.CellToWorld(new Vector3Int(-1, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0))) / 2;
+            transform.position = (grid.CellToWorld(new Vector3Int(-2, 1, 0)) + grid.CellToWorld(new Vector3Int(-1, 1, 0))) / 2;
         }
         else if (transform.name == "Goal_5")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-3, 1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
+        }
+
+        // Stage 6
+        else if (transform.name == "CrossWalk_6_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_6_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_6_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_6_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 2, 0));
+        }
+        else if (transform.name == "CrossWalk_6_5")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_6_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 0, 0));
+        }
+        else if (transform.name == "CrossWalk_6_7")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -1, 0));
+        }
+        else if (transform.name == "CrossWalk_6_8")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 1, 0));
+        }
+        else if (transform.name == "CrossWalk_6_9")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, 1, 0));
+        }
+        else if (transform.name == "DeadEnd_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 3, 0));
+        }
+        else if (transform.name == "Road_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 2, 0));
+        }
+        else if (transform.name == "Front_6_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, -1, 0));
+        }
+        else if (transform.name == "Front_6_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 3, 0));
+        }
+        else if (transform.name == "FrontRight_6_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
+        }
+        else if (transform.name == "FrontRight_6_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, -2, 0));
+        }
+        else if (transform.name == "FrontRight_6_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, 0, 0));
+        }
+        else if (transform.name == "FrontRight_6_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 2, 0));
+        }
+        else if (transform.name == "FrontLeft_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 3, 0));
+        }
+        else if (transform.name == "BackRight_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(1, -1, 0));
+        }
+        else if (transform.name == "Trap_6_1")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(1, 1, 0)) + grid.CellToWorld(new Vector3Int(2, 1, 0))) / 2;
+        }
+        else if (transform.name == "Trap_6_2")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(0, 1, 0)) + grid.CellToWorld(new Vector3Int(0, 2, 0))) / 2;
+        }
+        else if (transform.name == "Tool_6_1")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-2, 2, 0));
+        }
+        else if (transform.name == "Tool_6_2")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+        }
+        else if (transform.name == "Tool_6_3")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(-1, 1, 0));
+        }
+        else if (transform.name == "Tool_6_4")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(0, 3, 0));
+        }
+        else if (transform.name == "Monster_6_1")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(1, 1, 0)) + grid.CellToWorld(new Vector3Int(0, 1, 0))) / 2;
+        }
+        else if (transform.name == "Monster_6_2")
+        {
+            transform.position = (grid.CellToWorld(new Vector3Int(0, 0, 0)) + grid.CellToWorld(new Vector3Int(-1, -1, 0))) / 2;
+        }
+        else if (transform.name == "Goal_6")
+        {
+            transform.position = grid.CellToWorld(new Vector3Int(2, 1, 0));
         }
     }
 }

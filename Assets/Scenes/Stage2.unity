@@ -534,6 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934276918}
+  - component: {fileID: 934276921}
   - component: {fileID: 934276920}
   - component: {fileID: 934276919}
   m_Layer: 5
@@ -660,6 +661,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934276917}
   m_CullTransparentMesh: 1
+--- !u!114 &934276921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934276917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b5a815257887e458e6896a30011df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1239703055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,7 +2956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1949695435}
   - component: {fileID: 1949695434}
-  - component: {fileID: 1949695433}
+  - component: {fileID: 1949695436}
   - component: {fileID: 1949695432}
   - component: {fileID: 1949695431}
   - component: {fileID: 1949695430}
@@ -3011,35 +3024,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1949695433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949695429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5687cb2ac59874946bc8dbc8dd87f15c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveFront: 0
-  MoveFrontLeft: 0
-  MoveFrontRight: 0
-  MoveBack: 0
-  MoveBackLeft: 0
-  MoveBackRight: 0
-  Clear: 0
-  Fail: 0
-  Food: 0
-  Foods: 03000000060000000900000004000000000000000000000000000000000000000000000000000000
-  HP: 0
-  HPs: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
-  Tool: 0
-  CrossWalk_2: 0
-  CrossWalk_3: 2
-  MeetDeadEnd: 0
-  BackCrossWalk: 0
 --- !u!212 &1949695434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3107,3 +3091,32 @@ Transform:
   m_Father: {fileID: 1663167631}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1949695436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949695429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5687cb2ac59874946bc8dbc8dd87f15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveFront: 0
+  MoveFrontLeft: 0
+  MoveFrontRight: 0
+  MoveBack: 0
+  MoveBackLeft: 0
+  MoveBackRight: 0
+  Clear: 0
+  Fail: 0
+  Food: 0
+  Foods: 0300000006000000050000000a0000000000000000000000
+  HP: 0
+  HPs: 010000000100000001000000010000000100000001000000
+  Tool: 0
+  CrossWalk_2: 0
+  CrossWalk_3: 0
+  MeetDeadEnd: 0
+  BackCrossWalk: 0

@@ -1841,7 +1841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395824075}
   - component: {fileID: 1395824074}
-  - component: {fileID: 1395824073}
+  - component: {fileID: 1395824079}
   - component: {fileID: 1395824076}
   - component: {fileID: 1395824078}
   - component: {fileID: 1395824077}
@@ -1852,35 +1852,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1395824073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395824072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5687cb2ac59874946bc8dbc8dd87f15c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveFront: 0
-  MoveFrontLeft: 0
-  MoveFrontRight: 0
-  MoveBack: 0
-  MoveBackLeft: 0
-  MoveBackRight: 0
-  Clear: 0
-  Fail: 0
-  Food: 0
-  Foods: 03000000060000000900000005000000000000000000000000000000000000000000000000000000
-  HP: 0
-  HPs: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
-  Tool: 0
-  CrossWalk_2: 0
-  CrossWalk_3: 0
-  MeetDeadEnd: 0
-  BackCrossWalk: 0
 --- !u!212 &1395824074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2005,6 +1976,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1395824079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395824072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5687cb2ac59874946bc8dbc8dd87f15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveFront: 0
+  MoveFrontLeft: 0
+  MoveFrontRight: 0
+  MoveBack: 0
+  MoveBackLeft: 0
+  MoveBackRight: 0
+  Clear: 0
+  Fail: 0
+  Food: 0
+  Foods: 0300000006000000050000000a0000000000000000000000
+  HP: 0
+  HPs: 010000000100000001000000010000000100000001000000
+  Tool: 0
+  CrossWalk_2: 0
+  CrossWalk_3: 0
+  MeetDeadEnd: 0
+  BackCrossWalk: 0
 --- !u!1 &1512415067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045302137}
+  - component: {fileID: 2045302140}
   - component: {fileID: 2045302139}
   - component: {fileID: 2045302138}
   m_Layer: 5
@@ -2699,3 +2700,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045302136}
   m_CullTransparentMesh: 1
+--- !u!114 &2045302140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045302136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b5a815257887e458e6896a30011df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

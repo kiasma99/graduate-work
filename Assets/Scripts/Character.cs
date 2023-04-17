@@ -17,10 +17,11 @@ public class Character : MonoBehaviour
     public bool MoveBackRight = false;
     public bool Clear = false;
     public bool Fail = false;
+    public int Stage;
     public int Food;
-    public int[] Foods = new int[] { 3, 6, 9, 5, 10, 0, 0, 0, 0, 0};
+    public int[] Foods = new int[] { 3, 6, 5, 10, 5, 0};
     public int HP;
-    public int[] HPs = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    public int[] HPs = new int[] { 1, 1, 1, 1, 1, 1};
     public int Tool;
     // Left°¡ true, Right°¡ false
     public bool CrossWalk_2 = false;
@@ -43,13 +44,9 @@ public class Character : MonoBehaviour
 
         scene = SceneManager.GetActiveScene();
         bool parse = int.TryParse(scene.name.Substring(scene.name.Length-1, 1), out int stage);
-        stage--;
-        if (stage == -1)
-        {
-            stage = 9;
-        }
-        Food = Foods[stage];
-        HP = HPs[stage];
+        Stage = stage;
+        Food = Foods[Stage-1];
+        HP = HPs[Stage-1];
         Tool = 0;
     }
 
@@ -114,11 +111,11 @@ public class Character : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Food--;
-        if (collision.gameObject.name == "FrontRight_3_1" && Food == Foods[2] - 1)
+        if (collision.gameObject.name =="FrontLeft_4" && Food == Foods[3] - 1)
         {
             Food++;
         }
-        if (collision.gameObject.name =="FrontLeft_5" && Food == Foods[4] - 1)
+        if (collision.gameObject.name == "FrontRight_6_1" && Food == Foods[5] - 1)
         {
             Food++;
         }
@@ -887,6 +884,12 @@ public class Character : MonoBehaviour
         {
             Food++;
             Tool++;
+        }
+
+        if (collision.gameObject.tag=="Monster")
+        {
+            Food++;
+            HP--;
         }
 
         if (Food == 0)
