@@ -20,6 +20,8 @@ public class StartButton : MonoBehaviour
 
     public void start()
     {
+        GameObject.Find("Canvas").transform.Find("ControlPanel").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("PauseButton").gameObject.SetActive(true);
         character.MoveFront = true;
     }
 }

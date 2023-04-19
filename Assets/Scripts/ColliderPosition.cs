@@ -15,7 +15,7 @@ public class ColliderPosition : MonoBehaviour
         {
             transform.position = grid.CellToWorld(new Vector3Int(-1, 0, 0));
         }
-        else if (transform.name == "CrossWalk_1")
+        else if (transform.name == "DeadEnd_1")
         {
             transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
         }
@@ -275,7 +275,7 @@ public class ColliderPosition : MonoBehaviour
         }
         else if (transform.name == "Tool_6_2")
         {
-            transform.position = grid.CellToWorld(new Vector3Int(-1, -1, 0));
+            transform.position = grid.CellToWorld(new Vector3Int(0, -1, 0));
         }
         else if (transform.name == "Tool_6_3")
         {

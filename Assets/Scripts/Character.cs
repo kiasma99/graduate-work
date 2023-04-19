@@ -8,6 +8,8 @@ public class Character : MonoBehaviour
 {
     private Animator animator;
     private Grid grid;
+    GameObject Object;
+    StageClearControl stageClearControl;
     private Scene scene;
     public bool MoveFront = false;
     public bool MoveFrontLeft = false;
@@ -15,13 +17,12 @@ public class Character : MonoBehaviour
     public bool MoveBack = false;
     public bool MoveBackLeft = false;
     public bool MoveBackRight = false;
+    public bool Pause = false;
     public bool Clear = false;
     public bool Fail = false;
     public int Stage;
     public int Food;
-    public int[] Foods = new int[] { 3, 6, 5, 10, 5, 0};
-    public int HP;
-    public int[] HPs = new int[] { 1, 1, 1, 1, 1, 1};
+    public int[] Foods = new int[] { 3, 6, 5, 10, 5, 10};
     public int Tool;
     // Left°¡ true, Right°¡ false
     public bool CrossWalk_2 = false;
@@ -30,7 +31,7 @@ public class Character : MonoBehaviour
     public bool MeetDeadEnd = false;
     public int BackCrossWalk = 0;
     Vector3 moveVelocity = Vector3.zero;
-    float moveSpeed = 0.5f;
+    public float moveSpeed = 0.3f;
 
     
 
@@ -42,11 +43,13 @@ public class Character : MonoBehaviour
         grid = transform.parent.GetComponentInParent<Grid>();
         transform.position = grid.CellToWorld(new Vector3Int(-2, 0, 0));
 
+        Object = GameObject.Find("StageClearController");
+        stageClearControl = Object.GetComponent<StageClearControl>();
+
         scene = SceneManager.GetActiveScene();
         bool parse = int.TryParse(scene.name.Substring(scene.name.Length-1, 1), out int stage);
         Stage = stage;
         Food = Foods[Stage-1];
-        HP = HPs[Stage-1];
         Tool = 0;
     }
 
@@ -95,11 +98,17 @@ public class Character : MonoBehaviour
             moveVelocity = grid.CellToWorld(new Vector3Int(-1, 0, 0));
             transform.position += moveVelocity * moveSpeed * Time.deltaTime;
         }
+        if (Pause)
+        {
+            animator.SetInteger("WalkType", 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
         if (Clear)
         {
             animator.SetBool("Clear", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             moveVelocity = Vector3.zero;
+            stageClearControl.stageClear[Stage - 1] = true;
         }
         if (Fail)
         {
@@ -873,10 +882,15 @@ public class Character : MonoBehaviour
             if (Tool > 0)
             {
                 Tool--;
+                collision.gameObject.SetActive(false);
             }
             else
             {
-                HP--;
+                CommandClear();
+                if (!Clear)
+                {
+                    Fail = true;
+                }
             }
         }
 
@@ -884,23 +898,20 @@ public class Character : MonoBehaviour
         {
             Food++;
             Tool++;
+            collision.gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag=="Monster")
         {
             Food++;
-            HP--;
-        }
-
-        if (Food == 0)
-        {
             CommandClear();
             if (!Clear)
             {
                 Fail = true;
             }
         }
-        if (HP == 0)
+
+        if (Food == 0)
         {
             CommandClear();
             if (!Clear)
