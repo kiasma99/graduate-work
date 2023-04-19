@@ -23,6 +23,7 @@ public class StageClearPanel : MonoBehaviour
         if(character.Clear && !finish)
         {
             GameObject.Find("Canvas").transform.Find("StageClearPanel").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("PauseButton").gameObject.SetActive(false);
             finish = true;
         }
     }
